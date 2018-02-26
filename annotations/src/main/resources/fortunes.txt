@@ -1,0 +1,7 @@
+fortune 1
+fortune 2
+fortune 3
+fortune 4
+fortune 5
+fortune 6
+fortune 7
