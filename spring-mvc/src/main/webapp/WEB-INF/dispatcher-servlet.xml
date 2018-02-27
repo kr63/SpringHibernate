@@ -16,9 +16,15 @@
     <context:component-scan base-package="edu.spring.controllers"/>
 
     <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
     </bean>
 
 </beans>

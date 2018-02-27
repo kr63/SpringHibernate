@@ -26,6 +26,7 @@
         <spring.version>5.0.3.RELEASE</spring.version>
         <javax.servlet.version>4.0.0</javax.servlet.version>
         <jstl.version>1.2</jstl.version>
+        <hibernate.validator.version>5.4.2.Final</hibernate.validator.version>
     </properties>
 
     <dependencies>
@@ -45,6 +46,12 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
         </dependency>
     </dependencies>
 

@@ -48,19 +48,19 @@ public class Student {
         this.country = country;
     }
 
-    public void setFavoriteLanguage(String favoriteLanguage) {
-        this.favoriteLanguage = favoriteLanguage;
-    }
-
     public String getFavoriteLanguage() {
         return favoriteLanguage;
     }
 
-    public void setOperatingSystems(String operatingSystems) {
-        this.operatingSystems = operatingSystems;
+    public void setFavoriteLanguage(String favoriteLanguage) {
+        this.favoriteLanguage = favoriteLanguage;
     }
 
     public String getOperatingSystems() {
         return operatingSystems;
+    }
+
+    public void setOperatingSystems(String operatingSystems) {
+        this.operatingSystems = operatingSystems;
     }
 }

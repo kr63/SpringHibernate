@@ -17,31 +17,31 @@
 
     <br><br>
 
-        Country:
+    Country:
 
-        <form:select path="country">
-            <form:options items="${student.countryOptions}"/>
-            <%--<form:option value="France" label="France"/>--%>
-            <%--<form:option value="Germany" label="Germany"/>--%>
-            <%--<form:option value="India" label="India"/>--%>
-        </form:select>
-
-    <br><br>
-    
-        Favorite Language:
-
-        Java <form:radiobutton path="favoriteLanguage" value="Java"/>
-        C# <form:radiobutton path="favoriteLanguage" value="C#"/>
-        PHP <form:radiobutton path="favoriteLanguage" value="PHP"/>
-        Ruby <form:radiobutton path="favoriteLanguage" value="Ruby"/>
+    <form:select path="country">
+        <form:options items="${student.countryOptions}"/>
+        <%--<form:option value="France" label="France"/>--%>
+        <%--<form:option value="Germany" label="Germany"/>--%>
+        <%--<form:option value="India" label="India"/>--%>
+    </form:select>
 
     <br><br>
 
-        Operating Systems:
+    Favorite Language:
 
-        Linux <form:checkbox path="operatingSystems" value="Linux"/>
-        Windows <form:checkbox path="operatingSystems" value="Windows"/>
-        Mac OS <form:checkbox path="operatingSystems" value="Mac OS"/>
+    Java <form:radiobutton path="favoriteLanguage" value="Java"/>
+    C# <form:radiobutton path="favoriteLanguage" value="C#"/>
+    PHP <form:radiobutton path="favoriteLanguage" value="PHP"/>
+    Ruby <form:radiobutton path="favoriteLanguage" value="Ruby"/>
+
+    <br><br>
+
+    Operating Systems:
+
+    Linux <form:checkbox path="operatingSystems" value="Linux"/>
+    Windows <form:checkbox path="operatingSystems" value="Windows"/>
+    Mac OS <form:checkbox path="operatingSystems" value="Mac OS"/>
 
     <br><br>
 

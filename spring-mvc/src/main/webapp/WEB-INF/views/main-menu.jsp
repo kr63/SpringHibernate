@@ -15,5 +15,9 @@
 
 <a href="${pageContext.request.contextPath}/student/showForm">Student Form</a>
 
+<br><br>
+
+<a href="${pageContext.request.contextPath}/customer/showForm">Customer Form</a>
+
 </body>
 </html>
