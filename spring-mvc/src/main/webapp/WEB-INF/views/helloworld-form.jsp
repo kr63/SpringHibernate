@@ -4,10 +4,10 @@
     <title>Hello World - Input Form</title>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/processFormVersionTwo" method="get">
-        <input type="text" name="studentName"
-               placeholder="What's your name?"/>
-        <input type="submit">
-    </form>
+<form action="${pageContext.request.contextPath}/hello/processFormVersionThree" method="get">
+    <input type="text" name="studentName"
+           placeholder="What's your name?"/>
+    <input type="submit">
+</form>
 </body>
 </html>
