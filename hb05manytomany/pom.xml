@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.hibernate</groupId>
-    <artifactId>hb-01-one-to-one-bi</artifactId>
+    <artifactId>hb-05-many-to-many</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
