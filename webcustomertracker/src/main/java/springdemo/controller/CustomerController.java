@@ -3,10 +3,7 @@ package springdemo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import springdemo.entity.Customer;
 import springdemo.service.CustomerService;
 
@@ -42,5 +39,25 @@ public class CustomerController {
     public String saveCustomer(@ModelAttribute("customer") Customer customer) {
         customerService.saveCustomer(customer);
         return "redirect:/customer/list";
+    }
+
+    @GetMapping("/showFormUpdate")
+    public String showFormUpdate(@RequestParam("customerId") int theId, Model model) {
+        Customer customer = customerService.getCustomer(theId);
+        model.addAttribute("customer", customer);
+        return "customer-form";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("customerId") int theId) {
+        customerService.deleteCustomer(theId);
+        return "redirect:/customer/list";
+    }
+
+    @PostMapping("/search")
+    public String seachCustomers(@RequestParam("searchName") String searchName, Model model) {
+        List<Customer> customers = customerService.searchCustomers(searchName);
+        model.addAttribute("customers", customers);
+        return "list-customers";
     }
 }
