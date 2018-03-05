@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.spring</groupId>
-    <artifactId>spring-aop-pointcut-declarations</artifactId>
+    <artifactId>spring-aop-pointcut-order-aspects</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
