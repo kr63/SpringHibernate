@@ -15,7 +15,6 @@
         <javax.servlet.api.version>4.0.0</javax.servlet.api.version>
         <javax.servlet.jsp.version>2.3.1</javax.servlet.jsp.version>
         <javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
-        <!--<hibernate.validator.version>5.4.2.Final</hibernate.validator.version>-->
         <junit.version>3.8.2</junit.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -41,6 +40,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${javax.servlet.api.version}</version>
@@ -57,12 +62,6 @@
             <artifactId>jstl</artifactId>
             <version>${javax.servlet.jstl.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-validator</artifactId>-->
-            <!--<version>${hibernate.validator.version}</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>junit</groupId>
