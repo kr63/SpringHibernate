@@ -23,7 +23,6 @@ public class CustomerDAOImpl implements CustomerDAO {
                 currentSession.createQuery(
                         "from Customer order by lastName",
                         Customer.class);
-
         return query.getResultList();
     }
 
@@ -51,7 +50,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public List<Customer> searchCustomers(String searchName) {
         Session currentSession = sessionFactory.getCurrentSession();
-        Query query = null;
+        Query query;
 
         if (searchName != null && searchName.trim().length() > 0) {
             query = currentSession.createQuery(
