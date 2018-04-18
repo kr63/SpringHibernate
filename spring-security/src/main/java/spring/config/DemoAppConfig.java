@@ -21,10 +21,14 @@ import java.util.logging.Logger;
 @PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     private Logger logger = Logger.getLogger(getClass().getName());
+
+    @Autowired
+    public DemoAppConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public ViewResolver viewResolver() {
@@ -35,13 +39,13 @@ public class DemoAppConfig {
     }
 
     @Bean
-    public DataSource securityDataSource() {
+    public DataSource dataSource() {
 
-        ComboPooledDataSource securityDataSource = new ComboPooledDataSource();
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
 //        set jdbc driver class
         try {
-            securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+            dataSource.setDriverClass(env.getProperty("jdbc.driver"));
         } catch (PropertyVetoException e) {
             throw new RuntimeException(e);
         }
@@ -49,20 +53,19 @@ public class DemoAppConfig {
         logger.info(">>> jdb.user=" + env.getProperty("jdbc.user"));
 
 //        set db connection props
-        securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-        securityDataSource.setUser(env.getProperty("jdbc.user"));
-        securityDataSource.setPassword(env.getProperty("jdbc.password"));
+        dataSource.setJdbcUrl(env.getProperty("jdbc.url"));
+        dataSource.setUser(env.getProperty("jdbc.user"));
+        dataSource.setPassword(env.getProperty("jdbc.password"));
 
-        securityDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
-        securityDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
-        securityDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));
-        securityDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
+        dataSource.setInitialPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.initialPoolSize")));
+        dataSource.setMinPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.minPoolSize")));
+        dataSource.setMaxPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.maxPoolSize")));
+        dataSource.setMaxIdleTime(
+                Integer.parseInt(env.getProperty("connection.pool.maxIdleTime")));
 
-        return securityDataSource;
-    }
-
-    private int getIntProperty(String propName) {
-        String propVal = env.getProperty(propName);
-        return Integer.parseInt(propVal);
+        return dataSource;
     }
 }

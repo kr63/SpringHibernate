@@ -10,8 +10,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <springframework.version>5.0.3.RELEASE</springframework.version>
-        <springsecurity.version>5.0.1.RELEASE</springsecurity.version>
+        <spring-webmvc.version>5.0.3.RELEASE</spring-webmvc.version>
+        <spring-security.version>5.0.1.RELEASE</spring-security.version>
         <javax.servlet.api.version>4.0.0</javax.servlet.api.version>
         <javax.servlet.jsp.version>2.3.1</javax.servlet.jsp.version>
         <javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
@@ -21,43 +21,47 @@
     </properties>
 
     <dependencies>
+        <!--Spring MVC support-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${springframework.version}</version>
+            <version>${spring-webmvc.version}</version>
         </dependency>
 
+        <!--Spring Security support-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${springsecurity.version}</version>
+            <version>${spring-security.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${springsecurity.version}</version>
+            <version>${spring-security.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-            <version>${springsecurity.version}</version>
+            <version>${spring-security.version}</version>
         </dependency>
 
+        <!--MySQL connector-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.5</version>
         </dependency>
 
+        <!--Connection Pool-->
         <dependency>
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>0.9.5.2</version>
         </dependency>
 
-
+        <!--Servlet, jsp & jstl support-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -76,6 +80,7 @@
             <version>${javax.servlet.jstl.version}</version>
         </dependency>
 
+        <!--JUnit-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
