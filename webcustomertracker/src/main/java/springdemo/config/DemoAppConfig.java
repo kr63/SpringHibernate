@@ -29,10 +29,14 @@ import java.util.logging.Logger;
 @PropertySource({"classpath:persistence-mysql.properties"})
 public class DemoAppConfig implements WebMvcConfigurer {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     private Logger logger = Logger.getLogger(getClass().getName());
+
+    @Autowired
+    public DemoAppConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public ViewResolver viewResolver() {
@@ -60,10 +64,14 @@ public class DemoAppConfig implements WebMvcConfigurer {
         myDataSource.setUser(env.getProperty("jdbc.user"));
         myDataSource.setPassword(env.getProperty("jdbc.password"));
 
-        myDataSource.setInitialPoolSize(Integer.parseInt(env.getProperty("connection.pool.initialPoolSize")));
-        myDataSource.setMinPoolSize(Integer.parseInt(env.getProperty("connection.pool.minPoolSize")));
-        myDataSource.setMaxPoolSize(Integer.parseInt(env.getProperty("connection.pool.maxPoolSize")));
-        myDataSource.setMaxIdleTime(Integer.parseInt(env.getProperty("connection.pool.maxIdleTime")));
+        myDataSource.setInitialPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.initialPoolSize")));
+        myDataSource.setMinPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.minPoolSize")));
+        myDataSource.setMaxPoolSize(
+                Integer.parseInt(env.getProperty("connection.pool.maxPoolSize")));
+        myDataSource.setMaxIdleTime(
+                Integer.parseInt(env.getProperty("connection.pool.maxIdleTime")));
 
         return myDataSource;
     }
