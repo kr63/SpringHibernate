@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.spring</groupId>
+    <artifactId>spring-hibernate</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <modules>
+        <module>annotations</module>
+        <module>hb-01-one-to-one-uni</module>
+        <module>hb-02-one-to-one-bi</module>
+        <module>hb-03-one-to-many</module>
+        <module>hb-04-one-to-many-uni</module>
+        <module>hb-05-many-to-many</module>
+        <module>hb-eager-vs-lazy-demo</module>
+        <module>hibernate-demo</module>
+        <module>ioc</module>
+        <module>spring-aop</module>
+        <module>spring-aop-pointcut-declarations</module>
+        <module>spring-aop-pointcut-order-aspects</module>
+        <module>spring-aop-read-joinpoint</module>
+        <module>spring-aop-z-after-returning</module>
+        <module>spring-aop-z-after-throwing</module>
+        <module>spring-aop-zz-after-finally</module>
+        <module>spring-aop-zz-around</module>
+        <module>spring-aop-zz-around-with-logger</module>
+        <module>spring-aop-zzz-around-handle-exception</module>
+        <module>spring-mvc</module>
+        <module>spring-security</module>
+        <module>web-customer-tracker</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
