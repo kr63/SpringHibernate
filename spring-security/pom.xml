@@ -15,7 +15,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring-webmvc.version>5.0.3.RELEASE</spring-webmvc.version>
+        <spring-webmvc.version>5.2.20.RELEASE</spring-webmvc.version>
         <spring-security.version>5.0.1.RELEASE</spring-security.version>
         <javax.servlet.api.version>4.0.0</javax.servlet.api.version>
         <javax.servlet.jsp.version>2.3.1</javax.servlet.jsp.version>
